@@ -1,0 +1,49 @@
+{% load cms_tags sekizai_tags menu_tags %}
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% page_attribute "page_title" %}</title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+
+    {% render_block "css" %}
+    {% addtoblock "css" %}
+    <link href="{% static 'cms_bootstrap_templates/css/custom.css' %}" rel="stylesheet">
+    {% endaddtoblock %}
+  </head>
+
+  <body>
+    {% cms_toolbar %}
+    <div class="container">
+
+      <!-- Static navbar -->
+      <div class="navbar navbar-default navbar-inverse" role="navigation">
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            {% show_menu %}
+          </ul>
+        </div>
+      </div>
+      <div id="headline">
+	{% placeholder headline %}
+      </div>
+      <div id="content">
+      {% block content %}{% endblock %}
+      </div>
+    </div>
+
+
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    {% render_block "js" %}
+  </body>
+</html>

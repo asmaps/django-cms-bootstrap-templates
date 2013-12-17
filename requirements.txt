@@ -1,0 +1,2 @@
+-e git+https://github.com/divio/django-cms.git@develop#egg=django_cms
+-e git+https://github.com/divio/djangocms-column.git@develop#egg=djangocms-column

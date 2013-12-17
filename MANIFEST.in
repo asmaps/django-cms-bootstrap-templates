@@ -1,0 +1,2 @@
+include README.md LICENCE
+recursive-include template_project/cms_bootstrap_templates *.py *.html *.js *.css
