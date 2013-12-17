@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
     name='django-cms-bootstrap-templates',
-    version='0.0.2a',
+    version='0.0.1',
     author=u'Arne Schauf',
     author_email='python.asmaps.de',
     packages=['cms_bootstrap_templates'],
